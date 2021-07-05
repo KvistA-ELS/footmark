@@ -61,6 +61,7 @@ class LoadBalancer(TaggedSLBObject):
         params = {}
         if internet_charge_type and str.lower(self.internet_charge_type) != str.lower(internet_charge_type):
             params['internet_charge_type'] = str.lower(internet_charge_type)
+            params['bandwidth'] = bandwidth
         if internet_charge_type and str(internet_charge_type).lower() == "paybybandwidth":
             if bandwidth and int(self.bandwidth) != int(bandwidth):
                 params['bandwidth'] = bandwidth
